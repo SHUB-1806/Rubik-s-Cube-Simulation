@@ -129,12 +129,7 @@ vec_L = [vector(0, i, j) for i in range(-1, 2) for j in range(-1, 2)]
 # vec1 in [vector(-1,1,0), vector(0,1,0), vector(1,1,0), vector(-1,0,0), vector(0,0,0), vector(1,0,0), vector(-1,-1,0), vector(0,-1,0), vector(1,-1,0)]:
 
 #front face
-for idx in range(9):
-    key = "F" + str(idx + 1)
-    cubelet = box(pos = cube_center + centre_position["green"] + vec_F[idx],
-                  size = vector(cubelet_length, cubelet_length, thickness),
-                  color = color.green)
-    cubelets_by_face["F"][key] =cubelet
+
 
 for idx in range(9):
     key = "U" + str(idx + 1)

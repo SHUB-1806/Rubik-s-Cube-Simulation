@@ -26,56 +26,63 @@ thickness_of_sticker = 0.02
 cube_centre = vector(0, 0, 0)
 
 #so that each sticker can be identified by its face and number
-cubelets_by_face = {'F' : [f"F{i}" for i in range(1, 5)],
-                    'R' : [f"R{i}" for i in range(1, 5)],
-                    'B' : [f"B{i}" for i in range(1, 5)],
-                    'L' : [f"L{i}" for i in range(1, 5)],
-                    'U' : [f"U{i}" for i in range(1, 5)],
-                    'D' : [f"D{i}" for i in range(1, 5)]
-                    }
+cubelets_by_face = {}
 
 #front
+stickers = []
 for i in range(1, 5):
-    key = "F" + str(i)
+    key = "F"
     vec1 = [vector(-0.5, 0.5, 0), vector(0.5, 0.5, 0), vector(-0.5, -0.5, 0), vector(0.5, -0.5, 0)]
     cubelet = box(pos= cube_centre + centre_pos['front'] + vec1[i-1], size=vector(length_of_sticker, length_of_sticker, thickness_of_sticker), color=face_colors['F'])
-    cubelets_by_face[key] = cubelet
+    stickers.append(cubelet)
+    cubelets_by_face[key] = stickers
 
 #back
+stickers = []
 for i in range(1, 5):
-    key = "B" + str(i)
+    key = "B"
     vec1 = [vector(-0.5, 0.5, 0), vector(0.5, 0.5, 0), vector(-0.5, -0.5, 0), vector(0.5, -0.5, 0)]
     cubelet = box(pos= cube_centre + centre_pos['back'] + vec1[i-1], size=vector(length_of_sticker, length_of_sticker, thickness_of_sticker), color=face_colors['B'])
-    cubelets_by_face[key] = cubelet
+    stickers.append(cubelet)
+    cubelets_by_face[key] = stickers
 
 #left
+stickers = []
 for i in range(1, 5):
-    key = "L" + str(i)
+    key = "L"
     vec1 = [vector(0, 0.5, -0.5), vector(0, 0.5, 0.5), vector(0, -0.5, -0.5), vector(0, -0.5, 0.5)]
     cubelet = box(pos= cube_centre + centre_pos['left'] + vec1[i-1], size=vector(thickness_of_sticker, length_of_sticker, length_of_sticker), color=face_colors['L'])
-    cubelets_by_face[key] = cubelet
+    stickers.append(cubelet)
+    cubelets_by_face[key] = stickers
 
 #right
+stickers = []
 for i in range(1, 5):
-    key = "R" + str(i)
+    key = "R"
     vec1 = [vector(0, 0.5, -0.5), vector(0, 0.5, 0.5), vector(0, -0.5, -0.5), vector(0, -0.5, 0.5)]
     cubelet = box(pos= cube_centre + centre_pos['right'] + vec1[i-1], size=vector(thickness_of_sticker, length_of_sticker, length_of_sticker), color=face_colors['R'])
-    cubelets_by_face[key] = cubelet
+    stickers.append(cubelet)
+    cubelets_by_face[key] = stickers
 
 #top
+stickers = []
 for i in range(1, 5):
-    key = "U" + str(i)
+    key = "U"
     vec1 = [vector(-0.5, 0, 0.5), vector(0.5, 0, 0.5), vector(-0.5, 0, -0.5), vector(0.5, 0, -0.5)]
     cubelet = box(pos= cube_centre + centre_pos['top'] + vec1[i-1], size=vector(length_of_sticker, thickness_of_sticker, length_of_sticker), color=face_colors['U'])
-    cubelets_by_face[key] = cubelet
+    stickers.append(cubelet)
+    cubelets_by_face[key] = stickers
 
 #bottom
+stickers = []
 for i in range(1, 5):
-    key = "D" + str(i)
+    key = "D"
     vec1 = [vector(-0.5, 0, 0.5), vector(0.5, 0, 0.5), vector(-0.5, 0, -0.5), vector(0.5, 0, -0.5)]
     cubelet = box(pos= cube_centre + centre_pos['bottom'] + vec1[i-1], size=vector(length_of_sticker, thickness_of_sticker, length_of_sticker), color=face_colors['D'])
-    cubelets_by_face[key] = cubelet
+    stickers.append(cubelet)
+    cubelets_by_face[key] = stickers
 
+# cubelets_by_face['F'][0].color = color.red
 
 # print(cubelet.name)
 while True:
